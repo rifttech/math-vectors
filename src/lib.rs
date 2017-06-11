@@ -1,4 +1,4 @@
-
+#![doc(html_root_url = "https://rifttech.github.io/math-vectors/")]
 pub mod vectors;
 #[cfg(test)]
 mod vector_tests {

@@ -2,5 +2,8 @@
 name = "math-vectors"
 version = "0.1.0"
 authors = ["Arthur Abramov <rifttech@protonmail.com>"]
-
+repositoty = "https://github.com/rifttech/math-vectors.git"
+homepage = "https://github.com/rifttech/math-vectors.git"
+license = "MIT"
+description = "vector algebra library"
 [dependencies]
