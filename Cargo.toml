@@ -1,0 +1,6 @@
+[package]
+name = "math-vectors"
+version = "0.1.0"
+authors = ["Arthur Abramov <rifttech@protonmail.com>"]
+
+[dependencies]
