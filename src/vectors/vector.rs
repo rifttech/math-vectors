@@ -55,9 +55,16 @@ impl Vector2 {
     /// Returns vector with a magnitude of 1
     ///
     pub fn normalize(&self) -> Vector2 {
-        Vector2{ x: (self.x / self.magnitude())
-               , y: (self.y / self.magnitude())
+        let magnitude = self.magnitude();
+        if magnitude.abs() < EPSILON {
+                Vector2::default()
         }
+        else {
+            Vector2{ x: (self.x / self.magnitude())
+                    , y: (self.y / self.magnitude())
+            }
+        }
+
     }
 
 }
@@ -190,6 +197,11 @@ pub const   ZERO: Vector2 = Vector2{ x: 0.0, y: 0.0 };
 ///
 pub const   ONE: Vector2 = Vector2{ x: 1.0, y: 1.0 };
 
+///
+/// for float comparison
+/// `abs(a - b) < eps`
+///
+const EPSILON:f64 = 1e-10;
 
 ///
 /// Multiplies two vectors component-wise
@@ -252,3 +264,33 @@ pub fn distance_squared(a:Vector2, b:Vector2) -> f64{
     let y = a.y - b.y;
     (x*x + y*y)
 }
+
+///
+/// Return true if vectors A and B are orthogonal.
+/// Two vectors `a` and `b` are said to be orthogonal
+/// if their direction are right angles; that's,
+/// the scalar product `a * b` is 0
+///
+pub fn are_orthogonal(a:Vector2, b:Vector2) -> bool {
+    dot(a,b).abs() < EPSILON
+}
+
+///
+/// Two vectors are said to be parallel if they have
+/// the same or opposite direction or if one of
+/// them is the zero vector
+///
+pub fn are_parallel(a:Vector2, b:Vector2) -> bool{
+    let dot = dot(a.normalize(), b.normalize());
+    println!("dot is {}", dot);
+    (dot.abs() - 1.0).abs() < EPSILON || (dot.abs() + 1.0).abs() < EPSILON  || dot.abs() < EPSILON
+
+}
+
+///
+/// Return true if vectors A and B are codirectional.
+///
+pub fn are_codirectional(a:Vector2, b:Vector2) -> bool {
+    (dot(a.normalize(), b.normalize()).abs() - 1.0).abs() < EPSILON
+}
+

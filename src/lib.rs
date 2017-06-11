@@ -111,6 +111,10 @@ mod vector_tests {
         let v = Vector2::new(5.0, 0.0);
         let v_normalized = v.normalize();
         assert_eq!(v_normalized, vector::RIGHT);
+
+        let v = Vector2::new(0.0, 0.0);
+        let v_normalized = v.normalize();
+        assert_eq!(v_normalized, vector::ZERO);
     }
 
     #[test]
@@ -171,5 +175,60 @@ mod vector_tests {
         assert_eq!(reflected_vector, Vector2 { x: -5.0, y: 9.0 });
         println!("{:?}", reflected_vector);
 
+    }
+
+    #[test]
+    fn it_should_be_parallel() {
+        let u = Vector2::new(2.0, 2.0);
+        let v = Vector2::new(5.0, 5.0);
+
+        let are_parallel = vector::are_parallel(u, v);
+        assert!(are_parallel);
+        //println!("u and v are parallel : {}", is_parallel);
+
+        let u = Vector2::new(-2.0, 2.0);
+        let v = Vector2::new(5.0, 5.0);
+
+        let are_parallel = vector::are_parallel(u, v);
+        assert!(are_parallel);
+        //println!("u and v are parallel : {}", is_parallel);
+
+
+        let u = Vector2::new(0.0, 0.0);
+        let v = Vector2::new(5.0, 5.0);
+
+        let are_parallel = vector::are_parallel(u, v);
+        assert!(are_parallel);
+        //println!("u and v are parallel : {}", is_parallel);
+    }
+
+    #[test]
+    fn it_should_be_codirectional() {
+        let u = Vector2::new(2.0, 2.0);
+        let v = Vector2::new(5.0, 5.0);
+
+        let are_codirectional = vector::are_codirectional(u, v);
+        assert!(are_codirectional);
+
+        let u = Vector2::new(10.0, 2.0);
+        let v = Vector2::new(5.0, 5.0);
+
+        let are_codirectional = vector::are_codirectional(u, v);
+        assert!(!are_codirectional);
+    }
+
+    #[test]
+    fn it_should_be_orthogonal() {
+        let u = Vector2::new(0.0, 5.0);
+        let v = Vector2::new(10.0, 0.0);
+
+        let are_orthogonal = vector::are_orthogonal(u, v);
+        assert!(are_orthogonal);
+
+        let u = Vector2::new(1.0, 5.0);
+        let v = Vector2::new(10.0, 0.0);
+
+        let are_orthogonal = vector::are_orthogonal(u, v);
+        assert!(!are_orthogonal);
     }
 }
