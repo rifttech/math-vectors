@@ -7,85 +7,33 @@ mod vector_tests {
 
     #[test]
     fn it_works() {
-        /*
-                let vec = Vector2::default();
-                println!("vector is {},{}",vec.x, vec.y);
-                println!("sqr magnitude is : {}", vec.sqr_magnitude());
-                println!("magnitude is : {}", vec.magnitude());
-
-                println!();
-
-                let vec = Vector2::new(3.0, 2.0);
-                println!("vector is {},{}",vec.x, vec.y);
-                println!("sqr magnitude is : {}", vec.sqr_magnitude());
-                println!("magnitude is : {}", vec.magnitude());
-                println!();
-
-                let a = Vector2::new(4.0, 5.0);
-                let b = Vector2::new(5.0, 6.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
-                let sum = a + b;
-                println!("sum of a and b is : {},{}", sum.x, sum.y);
-                println!();
-
-                let a = Vector2::new(4.0, 5.0);
-                let b = Vector2::new(5.0, 6.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
-                let sub = a - b;
-                println!("sum of a and b is : ({},{})", sub.x, sub.y);
-                println!();
-
-                let a = Vector2::new(4.0, 5.0);
-                let b = Vector2::new(5.0, 6.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
-                let mul = a * b;
-                println!("sum of a and b is : ({},{})", mul.x, mul.y);
-                println!();
-
-                let a = Vector2::new(4.0, 5.0);
-                let b = Vector2::new(5.0, 6.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
-                let div = a / b;
-                println!("sum of a and b is : ({},{})", div.x, div.y);
-
-                println!();
 
 
-                let a = Vector2::new(1.0, 5.0);
-                let b = Vector2::new(1.0, 5.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
+        let a = Vector2::new(1.0, 5.0);
+        let b = Vector2::new(1.0, 5.0);
+        println!("vector a is ({},{})",a.x, a.y);
+        println!("vector b is ({},{})",b.x, b.y);
 
-                let is_equal = a == b;
-                println!("a == b is : {}", is_equal);
-                let is_equal = b == a;
-                println!("a == b is : {}", is_equal);
+        let is_equal = a == b;
+        println!("a == b is : {}", is_equal);
+        assert!(is_equal);
+        let is_equal = b == a;
+        println!("a == b is : {}", is_equal);
+        assert!(is_equal);
 
 
-                println!();
-                let a = Vector2::new(1.0, 6.0);
-                let b = Vector2::new(1.0, 5.0);
-                println!("vector a is ({},{})",a.x, a.y);
-                println!("vector b is ({},{})",b.x, b.y);
-                let is_not_equal = a == b;
-                println!("a != b is : {}", is_not_equal);
-                let is_not_equal = b == a;
-                println!("a != b is : {}", is_not_equal);
+        println!();
+        let a = Vector2::new(1.0, 6.0);
+        let b = Vector2::new(1.0, 5.0);
+        println!("vector a is ({},{})",a.x, a.y);
+        println!("vector b is ({},{})",b.x, b.y);
+        let is_not_equal = a != b;
+        println!("a != b is : {}", is_not_equal);
+        assert!(is_not_equal);
+        let is_not_equal = b != a;
+        println!("a != b is : {}", is_not_equal);
+        assert!(is_not_equal);
 
-                println!();
-
-                let vector = Vector2::new(4.0, 6.0);
-                let normalized_vector = vector.normalize();
-                println!("vector a is ({},{})",vector.x, vector.y);
-                println!("vector a is ({},{})",normalized_vector.x, normalized_vector.y);
-
-                let norm_vector_magnitude = normalized_vector.magnitude();
-                println!("magnitude a is ({})",norm_vector_magnitude);
-        */
     }
 
     #[test]
@@ -139,5 +87,29 @@ mod vector_tests {
         let t = vector::ONE + vector::LEFT;
         println!("{:?}", t);
         assert_eq!(t, Vector2::new(0.0, 1.0), "vectors should be equals");
+    }
+
+    #[test]
+    fn test_magnitude() {
+        let v = Vector2::new(0.0, 5.0);
+        let vector_magnitude = v.magnitude();
+        assert_eq!(vector_magnitude, 5.0);
+
+        let v = Vector2::new(0.0, 5.0);
+        let squared_magnitude = v.sqr_magnitude();
+        assert_eq!(squared_magnitude, 25.0);
+    }
+
+    #[test]
+    fn it_initialize_default_vector() {
+        let v = Vector2::default();
+        assert_eq!(v, vector::ZERO);
+    }
+
+    #[test]
+    fn it_should_return_normalized_vector() {
+        let v = Vector2::new(5.0, 0.0);
+        let v_normalized = v.normalize();
+        assert_eq!(v_normalized, vector::RIGHT);
     }
 }
