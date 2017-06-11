@@ -155,7 +155,7 @@ impl PartialEq for Vector2{
         (self.x == other.x) && (self.y == other.y)
     }
     fn ne(&self, other: &Vector2) -> bool {
-        (self.x != other.x) && (self.y != other.y)
+        (self.x != other.x) || (self.y != other.y)
     }
 }
 
