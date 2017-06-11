@@ -222,7 +222,7 @@ pub fn min(lhs: Vector2, rhs:Vector2) -> Vector2 {
 /// Dot Product of two vectors.
 ///
 pub fn dot(lhs:Vector2, rhs:Vector2) -> f64 {
-    lhs.x * rhs.x + lhs.x * rhs.x
+    lhs.x * rhs.x + lhs.y * rhs.y
 }
 
 ///
