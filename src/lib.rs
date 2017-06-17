@@ -8,7 +8,6 @@ mod vector_tests {
     #[test]
     fn it_works() {
 
-
         let a = Vector2::new(1.0, 5.0);
         let b = Vector2::new(1.0, 5.0);
         println!("vector a is ({},{})",a.x, a.y);
@@ -22,7 +21,7 @@ mod vector_tests {
         assert!(is_equal);
 
 
-        println!();
+        //println!();
         let a = Vector2::new(1.0, 6.0);
         let b = Vector2::new(1.0, 5.0);
         println!("vector a is ({},{})",a.x, a.y);
@@ -230,5 +229,53 @@ mod vector_tests {
 
         let are_orthogonal = vector::are_orthogonal(u, v);
         assert!(!are_orthogonal);
+    }
+
+    #[test]
+    fn lerp_of_vectors() {
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = 0.5;
+        let result = vector::lerp(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * 3.0);
+
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = 1.5;
+        let result = vector::lerp(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * 4.0);
+
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = -1.5;
+        let result = vector::lerp(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * 2.0);
+    }
+
+    #[test]
+    fn lerp_of_unclamped_vectors() {
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = 0.5;
+        let result = vector::lerp_unclamped(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * 3.0);
+
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = 1.5;
+        let result = vector::lerp_unclamped(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * 5.0);
+
+        let u = Vector2::new(2.0,2.0);
+        let v = Vector2::new(4.0,4.0);
+        let t = -1.5;
+        let result = vector::lerp_unclamped(u,v, t);
+        //println!("vector is {:?}", result);
+        assert_eq!(result, vector::ONE * -1.0);
     }
 }

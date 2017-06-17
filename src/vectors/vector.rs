@@ -294,3 +294,111 @@ pub fn are_codirectional(a:Vector2, b:Vector2) -> bool {
     (dot(a.normalize(), b.normalize()).abs() - 1.0).abs() < EPSILON
 }
 
+///
+/// Linearly interpolates between vector `a` and vector `b` by `t`
+/// when `t = 1` returns `b`
+/// when `t = 0` returns `a`
+/// when `t = 0.5` returns midpoint
+///
+pub fn lerp(a:Vector2, b:Vector2, t:f64) -> Vector2 {
+    let t_clamped = float_clamp01(t);
+    Vector2{
+        x: (a.x + (b.x - a.x) * t_clamped),
+        y: (a.y + (b.y - a.y) * t_clamped)
+    }
+}
+
+///
+/// Linearly interpolates between vector `a` and vector `b` by `t`
+///
+pub fn lerp_unclamped(a:Vector2, b:Vector2, t:f64) -> Vector2 {
+    Vector2{
+        x: (a.x + (b.x - a.x) * t),
+        y: (a.y + (b.y - a.y) * t)
+    }
+}
+
+///
+/// Clamps a value between a minimum float and maximum float value
+///
+pub fn float_clamp(value:f64, min:f64, max:f64) -> f64{
+    if value < min
+        {min}
+    else if value > max
+        {max}
+    else
+        {value}
+
+}
+
+///
+/// Clamps a value between 0  and 1 and returns value
+///
+pub fn float_clamp01(value:f64) -> f64{
+    if value < 0.0
+        {0.0}
+    else if value > 1.0
+        {1.0}
+    else
+        {value}
+
+}
+
+
+///
+/// testing private functions
+///
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn float_clamp_test_it_returns_max() {
+        let value = 11.0;
+        let min = 0.0;
+        let max = 10.0;
+        let result = float_clamp(value,min,max);
+        assert_eq!(result, max);
+    }
+
+    #[test]
+    fn float_clamp_test_it_returns_min() {
+        let value = -5.0;
+        let min = 0.0;
+        let max = 10.0;
+        let result = float_clamp(value,min,max);
+        assert_eq!(result, min);
+    }
+
+    #[test]
+    fn float_clamp_test_it_returns_value() {
+        let value = 1.0;
+        let min = 0.0;
+        let max = 10.0;
+        let result = float_clamp(value,min,max);
+        assert_eq!(result, value);
+    }
+
+
+    #[test]
+    fn float_clamp01_test_it_returns_max() {
+        let value = 2.0;
+        let result = float_clamp01(value);
+        assert_eq!(result, 1.0);
+    }
+
+    #[test]
+    fn float_clamp01_test_it_returns_min() {
+        let value = -5.0;
+        let result = float_clamp01(value);
+        assert_eq!(result, 0.0);
+    }
+
+    #[test]
+    fn float_clamp01_test_it_returns_value() {
+        let value = 0.10;
+        let result = float_clamp01(value);
+        assert_eq!(result, value);
+    }
+
+}
