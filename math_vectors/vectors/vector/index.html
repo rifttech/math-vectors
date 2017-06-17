@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `vector` mod in crate `math_vectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, vector">
+
+    <title>math_vectors::vectors::vector - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module vector</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#constants">Constants</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../../index.html'>math_vectors</a>::<wbr><a href='../index.html'>vectors</a></p><script>window.sidebarCurrent = {name: 'vector', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>math_vectors</a>::<wbr><a href='../index.html'>vectors</a>::<wbr><a class="mod" href=''>vector</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/math_vectors/vectors/vector.rs.html#2-404' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Vector2.html"
+                                  title='struct math_vectors::vectors::vector::Vector2'>Vector2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DOWN.html"
+                                  title='constant math_vectors::vectors::vector::DOWN'>DOWN</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: 0.0, y: -1.0 }</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.LEFT.html"
+                                  title='constant math_vectors::vectors::vector::LEFT'>LEFT</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: -1.0, y: 0.0 }</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ONE.html"
+                                  title='constant math_vectors::vectors::vector::ONE'>ONE</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: 1.0, y: 1.0 }</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RIGHT.html"
+                                  title='constant math_vectors::vectors::vector::RIGHT'>RIGHT</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: 1.0, y: 0.0 }</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.UP.html"
+                                  title='constant math_vectors::vectors::vector::UP'>UP</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: 0.0, y: 1.0 }</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ZERO.html"
+                                  title='constant math_vectors::vectors::vector::ZERO'>ZERO</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for writing Vector2{ x: 0.0, y: 0.0 }</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.are_codirectional.html"
+                                  title='fn math_vectors::vectors::vector::are_codirectional'>are_codirectional</a></td>
+                           <td class='docblock-short'>
+                                <p>Return true if vectors A and B are codirectional.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.are_orthogonal.html"
+                                  title='fn math_vectors::vectors::vector::are_orthogonal'>are_orthogonal</a></td>
+                           <td class='docblock-short'>
+                                <p>Return true if vectors A and B are orthogonal.
+Two vectors <code>a</code> and <code>b</code> are said to be orthogonal
+if their direction are right angles; that&#39;s,
+the scalar product <code>a * b</code> is 0</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.are_parallel.html"
+                                  title='fn math_vectors::vectors::vector::are_parallel'>are_parallel</a></td>
+                           <td class='docblock-short'>
+                                <p>Two vectors are said to be parallel if they have
+the same or opposite direction or if one of
+them is the zero vector</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.distance.html"
+                                  title='fn math_vectors::vectors::vector::distance'>distance</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns the distance between a and b.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.distance_squared.html"
+                                  title='fn math_vectors::vectors::vector::distance_squared'>distance_squared</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns the squared distance between a and b.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.dot.html"
+                                  title='fn math_vectors::vectors::vector::dot'>dot</a></td>
+                           <td class='docblock-short'>
+                                <p>Dot Product of two vectors.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.float_clamp.html"
+                                  title='fn math_vectors::vectors::vector::float_clamp'>float_clamp</a></td>
+                           <td class='docblock-short'>
+                                <p>Clamps a value between a minimum float and maximum float value</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.float_clamp01.html"
+                                  title='fn math_vectors::vectors::vector::float_clamp01'>float_clamp01</a></td>
+                           <td class='docblock-short'>
+                                <p>Clamps a value between 0  and 1 and returns value</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.lerp.html"
+                                  title='fn math_vectors::vectors::vector::lerp'>lerp</a></td>
+                           <td class='docblock-short'>
+                                <p>Linearly interpolates between vector <code>a</code> and vector <code>b</code> by <code>t</code>
+when <code>t = 1</code> returns <code>b</code>
+when <code>t = 0</code> returns <code>a</code>
+when <code>t = 0.5</code> returns midpoint</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.lerp_unclamped.html"
+                                  title='fn math_vectors::vectors::vector::lerp_unclamped'>lerp_unclamped</a></td>
+                           <td class='docblock-short'>
+                                <p>Linearly interpolates between vector <code>a</code> and vector <code>b</code> by <code>t</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.max.html"
+                                  title='fn math_vectors::vectors::vector::max'>max</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns a vector that is made from the largest components of two vectors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.min.html"
+                                  title='fn math_vectors::vectors::vector::min'>min</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns a vector that is made from the smallest components of two vectors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.reflect.html"
+                                  title='fn math_vectors::vectors::vector::reflect'>reflect</a></td>
+                           <td class='docblock-short'>
+                                <p>Reflects a vector off the vector defined by a normal.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.scale.html"
+                                  title='fn math_vectors::vectors::vector::scale'>scale</a></td>
+                           <td class='docblock-short'>
+                                <p>Multiplies two vectors component-wise</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "math_vectors";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

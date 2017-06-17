@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["DOWN",""],["LEFT",""],["ONE",""],["RIGHT",""],["UP",""],["ZERO",""]],"fn":[["are_codirectional",""],["are_orthogonal",""],["are_parallel",""],["distance",""],["distance_squared",""],["dot",""],["float_clamp",""],["float_clamp01",""],["lerp",""],["lerp_unclamped",""],["max",""],["min",""],["reflect",""],["scale",""]],"struct":[["Vector2",""]]});
